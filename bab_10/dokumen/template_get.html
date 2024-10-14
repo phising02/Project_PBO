@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form GET Request</title>
+</head>
+<body>
+    <h1>Operasi GET</h1>
+    <form action="/template_get.html" method="get">
+        <p>
+            <label for="param1">Parameter 1:</label>
+            <input type="text" id="param1" name="param1" value="">
+        </p>
+        <p>
+            <label for="param2">Parameter 2:</label>
+            <input type="text" id="param2" name="param2" value="">
+        </p>
+        <p>
+            <input type="submit" value="Kirim">
+        </p>
+    </form>
+    <h2>Hasil GET Request:</h2>
+    {%
+    if 'param1' in globals() and param1:
+        echo ("<h2>Hasil GET Request Parameter 1:</h2>")
+        echo_fmt ("Parameter 1 : %s", param1)
+    if 'param2' in globals() and param2:
+        echo ("<h2>Hasil GET Request Parameter 2:</h2>")
+        echo_fmt ("Parameter 2 : %s", param2)
+    %}
+</body>
+</html>
